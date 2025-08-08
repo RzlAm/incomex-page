@@ -183,7 +183,7 @@
     </style>
   </head>
   <body class="bg-gray-50">
-    <header class="bg-white shadow-sm">
+    <header class="bg-white shadow-sm fixed w-full">
       <div class="container mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
           <div class="flex items-center">
@@ -192,22 +192,30 @@
           </div>
           <nav class="hidden md:block">
             <ul class="flex space-x-8">
-              <li><a href="#overview" class="text-gray-600 hover:text-green-600">Overview</a></li>
-              <li><a href="#features" class="text-gray-600 hover:text-green-600">Features</a></li>
-              <li><a href="#screenshots" class="text-gray-600 hover:text-green-600">Screenshots</a></li>
-              <li><a href="#contribute" class="text-gray-600 hover:text-green-600">Contribute</a></li>
+              <li><a href="#overview" class="text-gray-600 hover:text-green-600 font-semibold">Overview</a></li>
+              <li><a href="#features" class="text-gray-600 hover:text-green-600 font-semibold">Features</a></li>
+              <li><a href="#screenshots" class="text-gray-600 hover:text-green-600 font-semibold">Screenshots</a></li>
+              <li><a href="#contribute" class="text-gray-600 hover:text-green-600 font-semibold">Contribute</a></li>
             </ul>
           </nav>
-          <button class="md:hidden text-gray-600">
+          <button class="md:hidden text-gray-600" onclick="toggleNav()">
             <i class="fas fa-bars text-xl"></i>
           </button>
         </div>
       </div>
+      <nav id="nav-mobile" class="hidden md:hidden border-t border-gray-100 pt-3 pb-5">
+        <ul class="flex flex-col px-3 space-y-1">
+          <li><a href="#overview" class="text-gray-600 hover:text-green-600 hover:bg-green-100 font-semibold block bg-gray-50 rounded-md py-2 px-4">Overview</a></li>
+          <li><a href="#features" class="text-gray-600 hover:text-green-600 hover:bg-green-100 font-semibold block bg-gray-50 rounded-md py-2 px-4">Features</a></li>
+          <li><a href="#screenshots" class="text-gray-600 hover:text-green-600 hover:bg-green-100 font-semibold block bg-gray-50 rounded-md py-2 px-4">Screenshots</a></li>
+          <li><a href="#contribute" class="text-gray-600 hover:text-green-600 hover:bg-green-100 font-semibold block bg-gray-50 rounded-md py-2 px-4">Contribute</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
       <!-- Hero Section -->
-      <section class="text-center py-12 md:py-0 px-6 md:px-10 min-h-[80vh] flex justify-center items-center flex-col">
+      <section class="text-center pt-[100px] md:pt-0 py-12 md:py-0 px-6 md:px-10 min-h-screen flex justify-center items-center flex-col">
         <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
           <span class="text-green-500">Incomex</span><br />
           Open Source Project
@@ -429,6 +437,10 @@
     </footer>
 
     <script>
+      function toggleNav() {
+        document.getElementById("nav-mobile").classList.toggle("hidden");
+      }
+
       // Fetch GitHub repo statistics
       document.addEventListener("DOMContentLoaded", function () {
         fetch("https://api.github.com/repos/RzlAm/incomex")
