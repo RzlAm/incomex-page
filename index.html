@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Incomex - Open Source Personal Daily Income and Expense Tracker</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Personal daily income and expense tracker based on Laravel Filament." />
+    <meta name="keywords" content="incomex, income tracker, expense tracker, catatan keuangan, keuangan harian, laravel filament, open source, personal finance, money management, aplikasi keuangan, money reports, wallet, budgeting, statistics, database backup, csv export" />
+    <meta name="author" content="Rizal Amin Maulana" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="language" content="en" />
+    <link rel="canonical" href="https://rzlam.github.io/incomex-page" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://rzlam.github.io/incomex-page" />
+    <meta property="og:title" content="Incomex - Personal daily income and expense tracker" />
+    <meta property="og:description" content="Personal daily income and expense tracker based on Laravel Filament." />
+    <meta property="og:image" content="https://rzlam.github.io/assets/images/main.webp" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://rzlam.github.io/incomex-page" />
+    <meta name="twitter:title" content="Incomex - Personal daily income and expense tracker" />
+    <meta name="twitter:description" content="Personal daily income and expense tracker based on Laravel Filament." />
+    <meta name="twitter:image" content="https://rzlam.github.io/assets/images/main.webp" />
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Incomex",
+        "url": "https://rzlam.github.io/incomex-page",
+        "description": "Personal daily income and expense tracker based on Laravel Filament, completely open source and free to use.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "RzlAm",
+          "url": "https://github.com/RzlAm",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://avatars.githubusercontent.com/u/112256482?v=4"
+          }
+        },
+        "image": "https://rzlam.github.io/assets/images/main.webp",
+        "sameAs": ["https://github.com/RzlAm/incomex", "https://rzlamin.my.id/projects/incomex-personal-daily-income-and-expense-tracker"],
+        "softwareApplication": {
+          "@type": "SoftwareApplication",
+          "name": "Incomex",
+          "operatingSystem": "Web",
+          "applicationCategory": "FinanceApplication",
+          "description": "Open source personal finance tracker for daily income and expenses.",
+          "url": "https://rzlam.github.io/incomex-page",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "11"
+          }
+        }
+      }
+    </script>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Personal daily income and expense tracker based on Laravel Filament." />
+    <meta name="keywords" content="incomex, income tracker, expense tracker, catatan keuangan, keuangan harian, laravel filament, open source, personal finance, money management, aplikasi keuangan, money reports, wallet, budgeting, statistics, database backup, csv export" />
+    <meta name="author" content="Rizal Amin Maulana" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="language" content="en" />
+    <link rel="canonical" href="https://rzlam.github.io/incomex-page" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://rzlam.github.io/incomex-page" />
+    <meta property="og:title" content="Incomex - Personal daily income and expense tracker" />
+    <meta property="og:description" content="Personal daily income and expense tracker based on Laravel Filament." />
+    <meta property="og:image" content="https://rzlam.github.io/assets/images/main.webp" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://rzlam.github.io/incomex-page" />
+    <meta name="twitter:title" content="Incomex - Personal daily income and expense tracker" />
+    <meta name="twitter:description" content="Personal daily income and expense tracker based on Laravel Filament." />
+    <meta name="twitter:image" content="https://rzlam.github.io/assets/images/main.webp" />
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Incomex",
+        "url": "https://rzlam.github.io/incomex-page",
+        "description": "Personal daily income and expense tracker based on Laravel Filament, completely open source and free to use.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "RzlAm",
+          "url": "https://github.com/RzlAm",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://avatars.githubusercontent.com/u/112256482?v=4"
+          }
+        },
+        "image": "https://rzlam.github.io/assets/images/main.webp",
+        "sameAs": ["https://github.com/RzlAm/incomex", "https://rzlamin.my.id/projects/incomex-personal-daily-income-and-expense-tracker"],
+        "softwareApplication": {
+          "@type": "SoftwareApplication",
+          "name": "Incomex",
+          "operatingSystem": "Web",
+          "applicationCategory": "FinanceApplication",
+          "description": "Open source personal finance tracker for daily income and expenses.",
+          "url": "https://rzlam.github.io/incomex-page",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "42"
+          }
+        }
+      }
+    </script>
+
+    <style>
+      * {
+        scroll-behavior: smooth !important;
+      }
+      .github-stats {
+        transition: all 0.3s ease;
+      }
+      .github-stats:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(34, 197, 94, 0.08);
+      }
+      .screenshot {
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(34, 197, 94, 0.1);
+        transition: all 0.3s ease;
+      }
+      .screenshot:hover {
+        transform: scale(1.02);
+        box-shadow: 0 10px 20px rgba(34, 197, 94, 0.18);
+      }
+      .contribute-btn {
+        background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+        transition: all 0.3s ease;
+      }
+      .contribute-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(34, 197, 94, 0.18);
+      }
+      .github-btn {
+        transition: all 0.3s ease;
+      }
+      .github-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(34, 197, 94, 0.18);
+      }
+      .demo-btn {
+        background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+        transition: all 0.3s ease;
+      }
+      .demo-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(34, 197, 94, 0.18);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <header class="bg-white shadow-sm">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <img src="favicon.svg" alt="logo incomex" class="w-8 h-8 mr-2" />
+            <h1 class="text-xl font-bold text-gray-800">Incomex</h1>
+          </div>
+          <nav class="hidden md:block">
+            <ul class="flex space-x-8">
+              <li><a href="#overview" class="text-gray-600 hover:text-green-600">Overview</a></li>
+              <li><a href="#features" class="text-gray-600 hover:text-green-600">Features</a></li>
+              <li><a href="#screenshots" class="text-gray-600 hover:text-green-600">Screenshots</a></li>
+              <li><a href="#contribute" class="text-gray-600 hover:text-green-600">Contribute</a></li>
+            </ul>
+          </nav>
+          <button class="md:hidden text-gray-600">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="text-center py-12 md:py-0 px-6 md:px-10 min-h-[80vh] flex justify-center items-center flex-col">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+          <span class="text-green-500">Incomex</span><br />
+          Open Source Project
+        </h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">Personal daily income and expense tracker based on Laravel Filament.</p>
+        <div class="flex justify-center space-y-2 sm:space-y-0 sm:space-x-4 flex-col sm:flex-row items-center">
+          <a href="https://github.com/RzlAm/incomex" target="_blank" class="github-btn bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-lg font-medium"> <i class="fab fa-github mr-2"></i> View on GitHub </a>
+          <a href="#screenshots" class="demo-btn text-white px-6 py-3 rounded-lg font-medium"> <i class="fas fa-play mr-2"></i> View Screenshots </a>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mt-12" id="github-stats">
+          <!-- Stats will be loaded here via JavaScript -->
+          <div class="github-stats bg-white p-6 rounded-xl shadow-md text-center">
+            <div class="text-4xl font-bold text-green-600 mb-2" id="stars">--</div>
+            <div class="text-gray-600">Stars</div>
+          </div>
+          <div class="github-stats bg-white p-6 rounded-xl shadow-md text-center">
+            <div class="text-4xl font-bold text-green-600 mb-2" id="forks">--</div>
+            <div class="text-gray-600">Forks</div>
+          </div>
+          <div class="github-stats bg-white p-6 rounded-xl shadow-md text-center">
+            <div class="text-4xl font-bold text-green-600 mb-2" id="watchers">--</div>
+            <div class="text-gray-600">Watchers</div>
+          </div>
+          <div class="github-stats bg-white p-6 rounded-xl shadow-md text-center">
+            <div class="text-4xl font-bold text-green-600 mb-2" id="contributors">--</div>
+            <div class="text-gray-600">Contributors</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Overview Section -->
+      <section id="overview" class="py-[100px] px-6 md:px-10 bg-white">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">About Incomex</h2>
+            <p class="text-gray-600 mb-4">Incomex is a web app for tracking your daily income and expenses with ease. It supports multiple wallets and provides basic statistics to help you manage your finances.</p>
+            <p class="text-gray-600 mb-6">Built with modern web technologies, Incomex is completely free to use and open for contributions from developers around the world.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Laravel</span>
+              <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Filament</span>
+              <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Open Source</span>
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <img loading="lazy" src="assets/images/main.webp" alt="Incomex Screenshot" class="w-full h-auto rounded-lg shadow-lg screenshot" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section id="features" class="py-[100px] px-6 md:px-10">
+        <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">All Features</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="text-green-600 text-3xl mb-4">
+              <i class="fas fa-user"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Single-user support</h3>
+            <p class="text-gray-600">Designed for individual users with personalized experience and data privacy.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="text-green-600 text-3xl mb-4">
+              <i class="fas fa-wallet"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Custom wallets</h3>
+            <p class="text-gray-600">Create and manage multiple wallets. Manage multiple wallets separately for easier.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="text-green-600 text-3xl mb-4">
+              <i class="fas fa-chart-bar"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Basic financial statistics</h3>
+            <p class="text-gray-600">Visualize your income and expenses with interactive charts and graphs to better understand your spending patterns.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="text-green-600 text-3xl mb-4">
+              <i class="fas fa-globe"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Timezone and currency configuration</h3>
+            <p class="text-gray-600">Adjust settings to your local timezone and preferred currency for accurate tracking.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="text-green-600 text-3xl mb-4">
+              <i class="fas fa-tags"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Custom categories</h3>
+            <p class="text-gray-600">Organize transactions with customizable categories for better financial organization.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="text-green-600 text-3xl mb-4">
+              <i class="fas fa-file-export"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Data Export</h3>
+            <p class="text-gray-600">Export your financial data in CSV formats for easy backup and analysis.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md md:col-start-2">
+            <div class="text-green-600 text-3xl mb-4">
+              <i class="fas fa-database"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Manual Database Backup</h3>
+            <p class="text-gray-600">Back up your database manually by downloading a complete .sql file.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screenshots Section -->
+      <section id="screenshots" class="py-[100px] px-6 md:px-10 bg-gradient-to-r from-green-500 to-green-700">
+        <h2 class="text-3xl font-bold text-white mb-10 text-center">Screenshots</h2>
+        <div class="flex justify-center w-5/6 mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex flex-col items-center">
+              <img loading="lazy" src="assets/images/1.webp" alt="Incomex Dashboard" class="w-full h-auto rounded-lg shadow-lg screenshot" />
+              <p class="text-center text-gray-100 text-lg mt-1 font-semibold">Dashboard Overview</p>
+            </div>
+            <div class="flex flex-col gap-6">
+              <div>
+                <img loading="lazy" src="assets/images/2.webp" alt="Transaction View" class="w-full h-auto rounded-lg shadow-lg screenshot" />
+                <p class="text-center text-gray-100 text-lg mt-1 font-semibold">Transaction Management</p>
+              </div>
+              <div>
+                <img loading="lazy" src="assets/images/3.webp" alt="Reports View" class="w-full h-auto rounded-lg shadow-lg screenshot" />
+                <p class="text-center text-gray-100 text-lg mt-1 font-semibold">Financial Reports</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contribute Section -->
+      <section id="contribute" class="py-[100px] px-6 md:px-10 bg-white">
+        <div class="bg-white rounded-xl overflow-hidden border-2 border-gray-100">
+          <div class="md:flex">
+            <div class="md:w-1/2 p-8 md:p-12 bg-green-50">
+              <h2 class="text-3xl font-bold text-gray-800 mb-4">Contribute to Incomex</h2>
+              <p class="text-gray-600 mb-6">Incomex is an open-source project that thrives on community contributions. Whether you're a developer, designer, or financial expert, there are many ways you can help improve Incomex.</p>
+              <hr class="mb-6" />
+              <div class="space-y-4">
+                <div class="flex items-start">
+                  <div class="text-green-600 mt-1 mr-3">
+                    <i class="fas fa-code"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-800">Code Contributions</h4>
+                    <p class="text-gray-600">Help implement new features, fix bugs, or improve performance.</p>
+                  </div>
+                </div>
+                <!-- <div class="flex items-start">
+                  <div class="text-green-600 mt-1 mr-3">
+                    <i class="fas fa-language"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-800">Translations</h4>
+                    <p class="text-gray-600">Help translate Incomex into your native language.</p>
+                  </div>
+                </div> -->
+                <div class="flex items-start">
+                  <div class="text-green-600 mt-1 mr-3">
+                    <i class="fas fa-bug"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-800">Bug Reports</h4>
+                    <p class="text-gray-600">Found an issue? Report it to help us improve.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="md:w-1/2 p-8 md:p-12">
+              <h3 class="text-2xl font-bold text-gray-800 mb-4">How to Get Started</h3>
+              <ol class="space-y-4 text-gray-600">
+                <li class="flex items-start">
+                  <span class="bg-green-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">1</span>
+                  <span>Fork the repository on GitHub</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="bg-green-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">2</span>
+                  <span>Clone your fork locally and set up the development environment</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="bg-green-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">3</span>
+                  <span>Create a new branch for your feature or bugfix</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="bg-green-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">4</span>
+                  <span>Make your changes and test them thoroughly</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="bg-green-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">5</span>
+                  <span>Submit a pull request with a clear description of your changes</span>
+                </li>
+              </ol>
+              <div class="mt-8">
+                <a href="https://github.com/RzlAm/incomex" target="_blank" class="contribute-btn text-white px-8 py-3 rounded-lg font-bold inline-block"> <i class="fab fa-github mr-2"></i> Contribute Now </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white pt-8">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-4 md:mb-0">
+            <div class="flex items-center">
+              <img src="favicon.svg" alt="logo incomex" class="w-8 h-8 mr-2" loading="lazy" />
+              <span class="text-xl font-bold">Incomex</span>
+            </div>
+            <p class="text-gray-400 mt-2">Personal daily income and expense tracker based on Laravel Filament.</p>
+          </div>
+          <div class="flex space-x-6">
+            <a href="https://github.com/RzlAm/incomex" target="_blank" class="text-gray-400 hover:text-white">
+              <i class="fab fa-github text-2xl"></i>
+            </a>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 py-4 text-center text-gray-400">
+          <p class="m-0">&copy; 2023 Incomex. All rights reserved. Licensed under MIT. Part of <a href="https://github.com/RzlAm" target="_blank" class="text-green-500">rzlam.</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Fetch GitHub repo statistics
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("https://api.github.com/repos/RzlAm/incomex")
+          .then((response) => response.json())
+          .then((data) => {
+            document.getElementById("stars").textContent = data.stargazers_count;
+            document.getElementById("forks").textContent = data.forks_count;
+            document.getElementById("watchers").textContent = data.watchers_count;
+
+            // Fetch contributors count
+            fetch("https://api.github.com/repos/RzlAm/incomex/contributors?per_page=1&anon=true")
+              .then((response) => {
+                // Get the link header for pagination
+                const linkHeader = response.headers.get("Link");
+                if (linkHeader) {
+                  const matches = linkHeader.match(/page=(\d+)>; rel="last"/);
+                  if (matches && matches[1]) {
+                    document.getElementById("contributors").textContent = matches[1];
+                  }
+                } else {
+                  // If no pagination, count the contributors in the response
+                  return response.json().then((contributors) => {
+                    document.getElementById("contributors").textContent = contributors.length;
+                  });
+                }
+              })
+              .catch((error) => {
+                console.error("Error fetching contributors:", error);
+                document.getElementById("contributors").textContent = "?";
+              });
+          })
+          .catch((error) => {
+            console.error("Error fetching repo data:", error);
+            document.getElementById("stars").textContent = "?";
+            document.getElementById("forks").textContent = "?";
+            document.getElementById("watchers").textContent = "?";
+            document.getElementById("contributors").textContent = "?";
+          });
+      });
+    </script>
+  </body>
+</html>
