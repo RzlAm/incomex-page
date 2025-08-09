@@ -431,12 +431,14 @@
           </div>
         </div>
         <div class="border-t border-gray-700 mt-8 py-4 text-center text-gray-400">
-          <p class="m-0">&copy; 2023 Incomex. All rights reserved. Licensed under MIT. Part of <a href="https://github.com/RzlAm" target="_blank" class="text-green-500">rzlam.</a></p>
+          <p class="m-0">&copy; <span id="year"></span> Incomex. All rights reserved. Licensed under MIT. Part of <a href="https://github.com/RzlAm" target="_blank" class="text-green-500">rzlam.</a></p>
         </div>
       </div>
     </footer>
 
     <script>
+      document.getElementById("year").innerText = new Date().getFullYear();
+
       function toggleNav() {
         document.getElementById("nav-mobile").classList.toggle("hidden");
       }
